@@ -1,10 +1,11 @@
-const CACHE_NAME = "Budget Tracker Cache ver1";
-const DATA_CACHE = "data cache name ver1";
+const CACHE_NAME = "Budget_Tracker_Cache_v1";
+const DATA_CACHE = "data_cache_name_v1";
 const FILES_TO_CACHE = [
-  "/js/index.js",
+  "/",
   "/js/idb.js",
-  "/css/styles.css",
+  "/js/index.js",
   "/manifest.json",
+  "/css/styles.css",
   "/icons/icon-72x72.png",
   "/icons/icon-96x96.png",
   "/icons/icon-128x128.png",
@@ -14,6 +15,16 @@ const FILES_TO_CACHE = [
   "/icons/icon-384x384.png",
   "/icons/icon-512x512.png",
 ];
+
+// Cache resources
+self.addEventListener("install", function (event) {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then(function (cache) {
+      console.log("installing cache : " + CACHE_NAME);
+      return cache.addAll(FILES_TO_CACHE);
+    })
+  );
+});
 
 // Respond with cached resources
 self.addEventListener("fetch", function (event) {
@@ -46,16 +57,6 @@ self.addEventListener("fetch", function (event) {
           return caches.match("/");
         }
       });
-    })
-  );
-});
-
-// Cache resources
-self.addEventListener("install", function (e) {
-  e.waitUntil(
-    caches.open(CACHE_NAME).then(function (cache) {
-      console.log("installing cache : " + CACHE_NAME);
-      return cache.addAll(FILES_TO_CACHE);
     })
   );
 });
