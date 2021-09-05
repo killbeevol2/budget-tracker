@@ -6,7 +6,21 @@
 
 ## Description
 
+An application to help the User track their budget. The application has the ability to add and subtract totals with the ability to be used online or offline!
+
 ## Tools
+
+- Service Worker : Acts as a proxy server that sit between web applications and the network (when available).
+
+- Express : Web application framework that provides features for web and mobile applications.
+
+- Mongoose : Schema-based solution to model application data.
+
+- Morgan : HTTP request logger middleware for Node.js.
+
+- Compression : Another Node.js middleware used to deflate or gzip.
+
+- JavaScript: Programming language of the Web.
 
 ## Table of Contents
 
@@ -16,7 +30,16 @@
 
 ## Installation
 
+After copying or cloning onto your computer, type in<br>
+`npm i` <br>
+into your terminal to install the dependencies.
+Afterwards, type in<br>
+`node server.js` <br>
+into your terminal to start your server.
+
 ## Usage
+
+This application is a prime example of when a User would like to use their application Offline when a situation arises where no internet connection is provided, but would still like to handle some work needed to be done. In which when internet is provided, the information the User inputs will be uploaded on refresh.
 
 ## License
 
